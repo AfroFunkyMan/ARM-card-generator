@@ -1,0 +1,7 @@
+<div>
+  <md-input-container>
+    <textarea #textarea md-input placeholder="Шаблон" cols="60" rows="5" (keyup)="onKey($event)"></textarea>
+    <md-hint align="end">Количество символов:{{textarea.value.length}}</md-hint>
+  </md-input-container>
+</div>
+

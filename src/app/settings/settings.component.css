@@ -1,0 +1,11 @@
+div {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+}
+
+.property-line {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
