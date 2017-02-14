@@ -12,17 +12,19 @@ export class TextareaComponent implements OnInit {
 
   values = "";
   onKey(event: KeyboardEvent) {
-    this.values = (<HTMLInputElement>event.target).value;
-    let areaValue = this.values;
+    //text2property.service.getData(event || event.target.value)
+    let areaValue = this.values = (<HTMLInputElement>event.target).value;
     this.onMatch(areaValue);
-    console.log(areaValue);
-    return(areaValue);
   }
 
   onMatch(areaValue) {
     let anchor = areaValue.match(/\{([a-zA-Z]+)\}/g);
     console.log(anchor);
+    // call the save service method
+    return anchor;
   }
+
+
 
   ngOnInit() {
   }

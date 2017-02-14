@@ -1,18 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { PROPERTY_LINES } from '../property-lines';
+import { Text2propertyService } from "../text2property.service";
 
-export class PropertyLine {
-  id: number;
-  name: string;
-  keywords: Array<string>;
-  amount: number;
-}
-
-const PROPERTY_LINES: PropertyLine[] = [
-  {id: 1, name: "qwe", keywords: ["word1","word2","word3"], amount: 4},
-  {id: 2, name: "qwe", keywords: ["word1","word2","word3"], amount: 4},
-  {id: 3, name: "qwe", keywords: ["word1","word2","word3"], amount: 4},
-  {id: 4, name: "qwe", keywords: ["word1","word2","word3"], amount: 4},
-];
 
 @Component({
   selector: 'app-settings',
@@ -22,23 +11,15 @@ const PROPERTY_LINES: PropertyLine[] = [
 
 export class SettingsComponent implements OnInit {
 
-  test = "tivmb";
-
-
-/** TODO
- metod keyup prochitat' i protestirovat' +
- metod match dlya znacheniya, protestirovat' skobochki +
- privyazka k dlinne massiva
- keshirovanie dlya sravnenia novyh elementov v massivah
- izbavitsya ot knopok udaleniya+
- */
-
   propertyLines = PROPERTY_LINES;
 
-  constructor() { }
+  constructor(private text2propertyService: Text2propertyService ) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.getText();
 
   }
 
 }
+
+/* TODO keshirovanie dlya sravnenia novyh elementov v massivah */

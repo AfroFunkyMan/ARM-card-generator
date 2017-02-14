@@ -7,6 +7,7 @@ import { MaterialModule } from '@angular/material';
 import { AppComponent } from './app.component';
 import { TextareaComponent } from './textarea/textarea.component';
 import { SettingsComponent } from './settings/settings.component';
+import {Text2propertyService} from "./text2property.service";
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { SettingsComponent } from './settings/settings.component';
     HttpModule,
     MaterialModule.forRoot(),
   ],
-  providers: [],
+  providers: [Text2propertyService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
