@@ -1,2 +1,25 @@
-<app-textarea></app-textarea>
-<app-settings></app-settings>
+
+<md-card *ngFor="let card of cards">
+  <md-card-content>
+    <h2>{{card.name}}</h2>
+    <section>
+      <md-input-container>
+        <textarea mdInput="mdInput" mdTextareaAutosize="mdTextareaAutosize" placeholder="Value" (keyup)="onKey(card, $event.target.value)"></textarea>
+      </md-input-container>
+    </section>
+    <section>
+      <md-slider [(max)]="card.max" min="1" step="1" thumb-label="thumb-label" (change)="card.value=$event.value"></md-slider>
+      <button md-mini-fab="md-mini-fab" (click)="deleteThisCard(card)">
+        <md-icon>delete</md-icon>
+      </button>
+    </section>
+  </md-card-content>
+</md-card>
+<div class="buttons-row">
+  <button class="get-data" md-fab="md-fab" color="primary" (click)="download($event)">
+    <md-icon>file_download</md-icon>
+  </button>
+  <button class="add-new-card" md-fab="md-fab" (click)="addNewCard($event)">
+    <md-icon>add</md-icon>
+  </button>
+</div>

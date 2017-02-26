@@ -1,0 +1,16 @@
+
+md-card(*ngFor='let card of cards')
+    md-card-content
+        h2 {{card.name}}
+        section
+            md-input-container
+                textarea(mdInput, mdTextareaAutosize, placeholder='Value', (keyup)="onKey(card, $event.target.value)")
+        section
+            md-slider([(max)]='card.max', min=1, step=1, thumb-label=true, (change)='card.value=$event.value')
+            button(md-mini-fab (click)="deleteThisCard(card)")
+                md-icon delete
+.buttons-row
+    button.get-data(md-fab, 'color'='primary', (click)="download($event)")
+        md-icon file_download
+    button.add-new-card(md-fab, (click)="addNewCard($event)")
+            md-icon add

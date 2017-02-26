@@ -5,23 +5,20 @@ import { HttpModule } from '@angular/http';
 import { MaterialModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
-import { TextareaComponent } from './textarea/textarea.component';
-import { SettingsComponent } from './settings/settings.component';
-import {Text2propertyService} from "./text2property.service";
+import 'hammerjs';
+import 'rxjs/Rx' ;
 
 @NgModule({
   declarations: [
-    AppComponent,
-    TextareaComponent,
-    SettingsComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    MaterialModule.forRoot(),
+    MaterialModule
   ],
-  providers: [Text2propertyService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

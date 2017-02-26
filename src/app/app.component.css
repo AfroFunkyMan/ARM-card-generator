@@ -1,7 +1,28 @@
-app-settings {
-    margin-top: 3rem;
+h2 {
+    margin: 10px;
+}
+
+section {
     display: flex;
-    flex-flow: column wrap;
-    justify-content: flex-start;
-    align-content: flex-start;
+    align-content: center;
+    align-items: center;
+}
+md-card {
+    margin: 10px;
+}
+
+.add-new-card {
+
+}
+
+.buttons-row {
+    display: inline-flex;
+    justify-content: space-between;
+
+}
+
+
+textarea {
+    width: 400px;
+    height: auto;
 }
