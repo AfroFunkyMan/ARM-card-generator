@@ -1,4 +1,10 @@
 
+<md-toolbar>
+  <md-input-container>
+    <input mdInput placeholder="Количество строк" type="number" value='10' (change)="count= +$event.target.value">
+  </md-input-container>
+  
+</md-toolbar>
 <md-card *ngFor="let card of cards">
   <md-card-content>
     <h2>{{card.name}}</h2>
@@ -8,6 +14,7 @@
       </md-input-container>
     </section>
     <section>
+      <p>Количество в ячейку</p>
       <md-slider [(max)]="card.max" min="1" step="1" thumb-label="thumb-label" (change)="card.value=$event.value"></md-slider>
       <button md-mini-fab="md-mini-fab" (click)="deleteThisCard(card)">
         <md-icon>delete</md-icon>

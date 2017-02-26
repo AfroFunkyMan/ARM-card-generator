@@ -29,6 +29,11 @@ export class AppComponent {
     console.log(event);
   }
 
+  setCount(event) {
+    console.log(event);
+  }
+
+
   download() {
     let strings = '';
     for (let i = 0; i <= this.count; i++) {

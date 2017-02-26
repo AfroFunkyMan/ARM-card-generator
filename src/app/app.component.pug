@@ -1,3 +1,7 @@
+md-toolbar.
+    <md-input-container>
+      <input mdInput placeholder="Количество строк" type="number" value='10' (change)="count= +$event.target.value">
+    </md-input-container>
 
 md-card(*ngFor='let card of cards')
     md-card-content
@@ -6,6 +10,7 @@ md-card(*ngFor='let card of cards')
             md-input-container
                 textarea(mdInput, mdTextareaAutosize, placeholder='Value', (keyup)="onKey(card, $event.target.value)")
         section
+            p Количество в ячейку
             md-slider([(max)]='card.max', min=1, step=1, thumb-label=true, (change)='card.value=$event.value')
             button(md-mini-fab (click)="deleteThisCard(card)")
                 md-icon delete
